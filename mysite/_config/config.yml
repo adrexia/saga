@@ -1,0 +1,41 @@
+---
+Name: mysite
+After: 'framework/*','cms/*, brand/*'
+---
+# YAML configuration for SilverStripe
+# See http://doc.silverstripe.org/framework/en/topics/configuration
+# Caution: Indentation through two spaces, not tabs
+SSViewer:
+  theme: 'brand'
+
+SiteConfig:
+  extensions:
+   - CustomSiteConfig
+Page:
+  extensions:
+   - BrandExtension
+Brand:
+ extensions:
+  - PanelBrandExtension
+
+DBField:
+  extensions:
+   - RichLinksExtension
+LeftAndMain:
+  extra_requirements_css:
+   - 'mysite/css/custom.css'
+ErrorPage:
+  icon: "mysite/images/sitetree_images/error.png"
+UserDefinedForm:
+  icon: "mysite/images/sitetree_images/form.png"
+  extensions:
+   - UserDefinedFormExtension
+SubmittedForm:
+  extensions:
+   - SubmittedFormExtension
+KickAssets:
+  menu_icon: "mysite/images/sitetree_images/photo.png"
+  menu_title: "Files"
+
+FormSpamProtectionExtension:
+  default_spam_protector: '\StudioBonito\SilverStripe\SpamProtection\Honeypot\SpamProtector\HoneypotSpamProtector'
