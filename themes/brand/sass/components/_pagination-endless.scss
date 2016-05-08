@@ -1,0 +1,39 @@
+$pagination-border: rgba(#333,0.1);
+.pagination-wrap.ssendless {
+	left: 0;
+	position: static;
+	width: 100%;
+	margin-top: 50px;
+	margin-bottom:100px;
+
+	.ss-pagination {
+		@include box-sizing(border-box);
+		float:left;
+		left:0;
+		position:relative;
+		width:100%;
+		text-align: center;
+
+		a {
+			@include transition(background-color, 0.3s);
+			position: relative;
+			text-transform: uppercase;
+
+			.loading-icon {
+				font-size: 1em;
+				color: #fff;
+				padding: 0;
+				i {
+					font-style: normal;
+					display: inline-block;
+				}
+			}
+		}
+
+		&.loading {
+			a .loading-icon{
+				display: inline-block;
+			}
+		}
+	}
+}

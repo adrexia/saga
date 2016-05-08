@@ -1,0 +1,169 @@
+/* Navigation (with dropdowns) */
+
+.navbar {
+	font-family: $font-family;
+	width: 100%;
+	height: $navcontain-height;
+	display: block;
+	background: $navbar-color; // Change this color in settings to change the navbar color
+	position: relative;
+	z-index: 1;
+
+	&.fixed {
+		position: fixed;
+		z-index: 9;
+		box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
+	}
+
+	&.has-image {
+		box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
+		z-index: 9;
+	}
+
+	&.pinned {
+		position: absolute;
+	}
+}
+
+body #BetterNavigator {
+	top: $navcontain-height;
+}
+
+.navbar .logo {
+  display: inline-block;
+  margin: 0 $gutter 0 0;
+  padding: 0;
+  a {
+	display: block;
+	padding: 0 20px;
+	@include respond(all-phones) {
+		padding: 0;
+	}
+
+	img {
+		max-height: 95%;
+		margin-bottom: 0;
+	}
+  }
+}
+
+.navbar ul {
+  margin: 0;
+  float: none;
+
+  li {
+	text-align: center;
+	padding-bottom: 0;
+	margin: 0;
+	display: inline-block;
+	float: left;
+
+
+	&.pull-right {
+		float:right;
+		@include respond(all-phones) {
+			margin-right: 10px;
+		}
+	}
+
+	&.item-center {
+		margin: 0 auto;
+		left: 50%;
+		-webkit-transform: translateX(-50%);
+		transform: translateX(-50%);
+		position: absolute;
+
+		@include respond(all-phones) {
+			left: 0;
+			position: static;
+			-webkit-transform: translateX(0%);
+			transform: translateX(0%);
+		}
+	}
+
+	&:not(.logo) {
+		> a {
+			padding-top: 10px;
+		}
+	}
+
+	&.nav-first {
+		margin-left: 13px;
+
+		@include respond(all-phones) {
+			margin-left: 3px;
+			a {
+				padding-right: 0;
+			}
+		}
+	}
+
+	&.login {
+		padding-top: 6px;
+
+		a, span {
+			font-size: 12px;
+		}
+		.login-user {
+			opacity: 0.5;
+			@include respond(all-phones) {
+				display: none;
+			}
+
+			&:after {
+				content: " | ";
+				padding-left: 18px;
+			}
+		}
+	}
+
+	> a,
+	> span {
+		display: inline-block;
+		padding: 0 ms(0);
+		padding-left: 0;
+		position: relative;
+		z-index: 1;
+		white-space: nowrap;
+		font-size: 0.9rem;
+		line-height: 2em;
+
+		&.toggle {
+			line-height: 1em;
+
+			.icon {
+				vertical-align: top;
+				padding-right: 5px;
+			}
+
+			.nav-pagetitle {
+				line-height: 1.6em;
+				display: inline-block;
+				padding-top: 3px;
+				@include respond(all-phones) {
+					display: none;
+				}
+			}
+		}
+		i.icon-popup {
+			position: absolute;
+		}
+	}
+	.btn {
+	  border-color: darken($navbar-color, 30%) !important;
+	}
+  }
+}
+
+.navcontain {
+  height: $navcontain-height;
+}
+
+.gumby-no-touch .navbar ul li > a:hover,
+.gumby-no-touch .navbar ul li > a:focus,
+.gumby-touch .navbar ul li > a.current,
+.gumby-touch .navbar ul li > a.section  {
+  position: relative;
+  opacity: 0.8;
+  z-index: 1000;
+}

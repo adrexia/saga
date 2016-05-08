@@ -1,0 +1,36 @@
+@import "compass/typography/vertical_rhythm";
+
+* {
+	@include box-sizing(border-box);
+}
+
+body {
+  font-family: $font-family;
+  font-weight: $body-font-weight;
+  color: $body-font-color;
+  position: relative;
+  -webkit-font-smoothing: $font-smoothing;
+  -moz-osx-font-smoothing: grayscale;
+  @include respond(all-phones) {
+	-webkit-text-size-adjust: none;
+	-ms-text-size-adjust: none;
+	width: 100%;
+	min-width: 0;
+  }
+}
+
+html, body {
+  height: 100%;
+  min-height: 900px;
+}
+
+.hide {
+  display: none;
+}
+
+.hide.active, .show {
+  display: block;
+}
+
+// include all entypo icon classes
+@include icon(all);

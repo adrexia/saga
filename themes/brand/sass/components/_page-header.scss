@@ -1,0 +1,51 @@
+
+.page-header {
+	padding: 15px 50px 100px;
+	color: #fff;
+	text-shadow: rgba(#333, 0.8) 0px 0px 20px;
+	box-shadow: inset 0px -2px 4px rgba(0,0,0,0.14);
+	text-align: center;
+
+	@include respond(all-phones) {
+		padding: 50px 20px;
+	}
+
+	h1 {
+		margin-bottom: 35px;
+	}
+
+	* {
+		color: #fff;
+	}
+
+	.btn {
+		margin-top: 30px;
+		margin-bottom: 30px;
+		&.large {
+			margin-bottom: 50px;
+		}
+	}
+
+	.secondary-menu {
+		margin-bottom: 22px;
+		@include respond(all-phones) {
+			margin-bottom: 0;
+		}
+	}
+
+	.nav-list {
+		margin-bottom: 15px;
+		@include respond(all-phones) {
+			margin: 0 10px;
+		}
+		.btn {
+			margin-top: 0;
+			margin-bottom: 15px;
+			margin-right: 20px;
+			@include respond(all-phones) {
+				margin-right: 5px;
+				margin-bottom: 10px;
+			}
+		}
+	}
+}

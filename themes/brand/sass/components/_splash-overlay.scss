@@ -1,0 +1,68 @@
+.splash-overlay {
+	position: relative;
+	overflow: hidden;
+	z-index: 0;
+
+	.splash,
+	.overlay {
+		min-height: 430px;
+		@include respond(all-phones) {
+			min-height: 675px;
+		}
+		@include respond(tablets) {
+			min-height: 675px;
+		}
+	}
+	.page-header {
+		@include respond(all-phones) {
+			padding-bottom: 28px;
+		}
+		@include respond(tablets) {
+			padding-bottom: 28px;
+		}
+	}
+
+	h1 {
+		@include respond(all-phones) {
+			margin-bottom: 20px;
+			margin-top: 10px;
+			font-size: 2rem;
+		}
+	}
+	p.lead {
+		@include respond(all-phones) {
+			font-size: 1rem;
+		}
+		@include respond(tablets) {
+			font-size: 1rem;
+			margin-bottom: 5px;
+			margin-top: 0;
+		}
+	}
+}
+
+
+
+.splash,
+.overlay {
+	min-height: 675px;
+	height: 100%;
+	position: absolute;
+	width: 100%;
+	z-index: -1;
+	top: 0;
+}
+
+.splash {
+	background-size: cover;
+	background-position: center;
+	background-color: #000;
+}
+
+.overlay {
+	background: #333;
+	.has-image & {
+		opacity: 0.5;
+		text-decoration: 1px 1px rgba(#333, 0.5);
+	}
+}

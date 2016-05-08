@@ -1,0 +1,71 @@
+/* Labels */
+
+.badge, .label {
+  height: 20px;
+  display: inline-block;
+  font-family: Helvetica, arial, verdana, sans-serif;
+  font-weight: bold;
+  line-height: 20px;
+  text-align:center;
+  color: #fff;
+  a {
+    color: #fff;
+  }
+
+  @for $i from 1 through $brand-num {
+      &.#{nth($brand-title, $i)} {
+          color: #fff;
+          background: nth($brand-list, $i);
+          border: 1px solid nth($brand-list, $i);
+
+          a:hover &,
+          a:focus & {
+              background: #fff;
+              color: nth($brand-list, $i);
+              text-shadow: none;
+              border: 1px solid #fff;
+          }
+      }
+  }
+}
+
+.badge {
+  padding: 0 10px;
+  @include font-size(ms(0, 14px));
+  @include border-radius(10px);
+}
+
+.label {
+  padding: 0 10px;
+  @include font-size(ms(0, 12px));
+  @include border-radius(2px);
+}
+
+.alert {
+  padding: 5px 10px;
+  font-family: $font-family;
+  font-weight: $font-weight-semibold;
+  line-height:1.5em;
+  list-style-type: none;
+  word-wrap: break-word;
+  margin-bottom: $norm / 2;
+  @include font-size(ms(0, 14px));
+  @include border-radius($button-radius);
+  @each $shade in $ui-coloring {
+    &.#{nth($shade, 1)} {
+      background: contrast-color(nth($shade, 2), lighten(nth($shade, 2), 45%), darken(nth($shade, 2), 10%));
+      border: 1px solid contrast-color(nth($shade, 2), lighten(nth($shade, 2), 30%), darken(nth($shade, 2), 20%));
+      color: darken(nth($shade, 2), 20%);
+      @if nth($shade, 1) == info {
+        color: $default-color;
+      }
+      @if nth($shade, 1) == default {
+        color: darken(nth($shade, 2), 61.5%);
+        border: 1px solid nth($shade, 2);
+      }
+      @if nth($shade, 1) == warning {
+        color: darken(nth($shade, 2), 40%);
+      }
+    }
+  }
+}
