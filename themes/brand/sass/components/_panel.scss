@@ -116,9 +116,12 @@
 	}
 
 	&.panel-content {
-		margin-top: -70px;
-		margin-bottom: 30px;
+
 		position: relative;
+		@include respond(document-width) {
+			margin-top: -70px;
+			margin-bottom: 30px;
+		}
 	}
 
 	.panel-block {
