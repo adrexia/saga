@@ -62,7 +62,7 @@
 
 	&--nav {
 		// fall back to the main header navigation
-		@include respond(all-mobile) {
+		@include respond(portrait-tablets) {
 			display: none;
 		}
 
