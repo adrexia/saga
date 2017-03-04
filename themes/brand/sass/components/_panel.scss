@@ -84,6 +84,11 @@
 			padding: 50px;
 			> .nav-list {
 				> li {
+
+					a {
+						line-height: 1.5em;
+					}
+					
 					> a {
 						display: block;
 						padding: 10px 0 5px;
@@ -107,7 +112,7 @@
 					}
 
 					ul a {
-						padding: 3px 0;
+						padding: 2px 0;
 						display: block;
 					}
 				}
