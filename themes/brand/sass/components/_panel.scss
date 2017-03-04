@@ -50,11 +50,69 @@
 	&.eight {
 		width: (100% /4 * 2);
 	}
+	&.nine {
+		width: (100% /4 * 3);
+	}
 	&.six {
 		width: (100% /2);
 	}
 	&.twelve {
 		width: 100%;
+	}
+
+	&--nav {
+		// fall back to the main header navigation
+		@include respond(all-mobile) {
+			display: none;
+		}
+
+		.section,
+		.active > a {
+			font-weight: 800;
+		}
+
+		.nav-level1.active,
+		.nav-section {
+			border-top: 2px solid transparent;
+			border-bottom: 4px solid transparent;
+			background: rgba(0, 0, 0, 0.02);
+			padding: 10px 20px;
+			margin: 0 -20px;
+		}
+
+		.panel-block {
+			padding: 50px;
+			> .nav-list {
+				> li {
+					> a {
+						display: block;
+						padding: 10px 0 5px;
+					}
+
+					&.nav-section  {
+						> a {
+							padding: 10px 0;
+						}
+					}
+
+					> ul {
+						font-size: 0.8em;
+						padding-top: 5px;
+						margin-left: 0;
+
+						ul {
+							font-size: 1em;
+							margin-left: 15px;
+						}
+					}
+
+					ul a {
+						padding: 3px 0;
+						display: block;
+					}
+				}
+			}
+		}
 	}
 
 

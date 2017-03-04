@@ -5,12 +5,18 @@ class Page extends SiteTree {
 
 	private static $db = array(
 		'Intro' => 'Text',
-		'PanelMargin' => "Int"
+		'PanelMargin' => "Int",
+		'ShowNavigationPanel' => 'Boolean',
+		'NavigationPosition' => 'Enum("With Panels, With Content", "With Content")',
+		'NavigationWidth' => 'Varchar(255)',
 	);
 
 	private static $has_many = array(
 		'Panels' => 'Panel'
 	);
+
+
+	private static $defaults = array('ShowNavigationPanel' => true, 'NavigationWidth' => 'three');
 
 	public function getCMSFields() {
 		$fields = parent::getCMSFields();
@@ -34,10 +40,57 @@ class Page extends SiteTree {
 				$panelmargin = TextField::create('PanelMargin', 'Panel Margin (px)')
 			);
 
+			$fields->addFieldsToTab('Root.Navigation', array(
+				$navBool = CheckboxField::create('ShowNavigationPanel', 'Show navigation panel'),
+				OptionSetField::create("NavigationPosition", "Navigation position", $this->dbObject('NavigationPosition')->enumValues()),
+				$width =  DropdownField::create('NavigationWidth', 'Navigation Width', $this->getColumns())
+			));
+
+			$navBool->setDescription('Displays a navigation panel within a page');
+			$width->setDescription("Width of navigation panel at desktop size");
+
 		}
 
 		return $fields;
 	}
+
+
+	public function getColumns() {
+		return array(
+			'three' => '1/4',
+			'four' => '1/3',
+			'eight' => '2/3',
+			'six' => '1/2',
+			'nine' => '3/4',
+			'twelve' => '1'
+		);
+	}
+
+	public function getWidthNice() {
+		if (!$this->NavigationWidth){
+			return '1';
+		}
+		$columns = $this->getColumns();
+		return $columns[$this->NavigationWidth];
+	}
+
+	public function ContentWidth() {
+		if($this->NavigationPosition === 'With Panels') {
+			return 'twelve';
+		}
+
+		$opts = array(
+			'three' => 'nine',
+			'four' => 'eight',
+			'eight' => 'four',
+			'six' => 'six',
+			'nine' => 'three',
+			'twelve' => 'twelve'
+		);
+
+		return $this->NavigationWidth ? $opts[$this->NavigationWidth] : 'twelve';
+	}
+
 
 }
 class Page_Controller extends ContentController {
@@ -115,4 +168,5 @@ class Page_Controller extends ContentController {
 	public function PanelMarginHalf(){
 		return $this->PanelMargin / 2;
 	}
+
 }

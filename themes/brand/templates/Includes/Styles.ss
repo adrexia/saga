@@ -58,6 +58,7 @@
 			.panel-block * {
 				color: $getHex($PanelFontColour);
 			}
+
 			.btn.default,
 			.skiplink.default,
 			.doRegister.default {
@@ -68,6 +69,33 @@
 			.btn.default a,
 			.btn.default input {
 				color: $getHex($PanelFontColour);
+			}
+		<% end_if %>
+
+		<% if $BodyLinkColour %>
+			.panel-block a span,
+			.panel-block a {
+				color: $getHex($BodyLinkColour);
+			}
+		<% end_if %>
+
+
+		<% if $MenuPanelBackgroundColour %>
+			.panel--nav .panel-block {
+				background-color: $getHex($MenuPanelBackgroundColour);
+			}
+		<% end_if %>
+
+		<% if $MenuPanelLinkColour %>
+			.panel--nav a span,
+			.panel--nav a {
+				color: $getHex($MenuPanelLinkColour);
+			}
+
+			.panel--nav .nav-level1.active,
+			.panel--nav .nav-section {
+				border-bottom-color: $getHex($MenuPanelLinkColour);
+				border-top-color: $getHex($MenuPanelLinkColour);
 			}
 		<% end_if %>
 

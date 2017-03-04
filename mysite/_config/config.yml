@@ -17,6 +17,7 @@ Page:
 Brand:
  extensions:
   - PanelBrandExtension
+  - MenuPanelBrandExtension
 
 DBField:
   extensions:

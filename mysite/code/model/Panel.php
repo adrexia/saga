@@ -172,6 +172,7 @@ class Panel extends DataObject {
 			'four' => '1/3',
 			'eight' => '2/3',
 			'six' => '1/2',
+			'nine' => '3/4',
 			'twelve' => '1'
 		);
 	}

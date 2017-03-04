@@ -2,7 +2,10 @@
 
 	<% if $Content || $Form %>
 	<div class="row">
-		<div class="columns twelve panel panel-content">
+		<% if $ShowNavigationPanel && $NavigationPosition =='With Content' %>
+			<% include PanelNav %>
+		<% end_if %>
+		<div class="columns panel panel-content	$ContentWidth">
 			<div class="panel-block">
 				<article class="content content--noheader">
 					<% if $Content %>

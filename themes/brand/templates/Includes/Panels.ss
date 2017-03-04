@@ -3,6 +3,9 @@
 	<div class="columns twelve">
 		<div class="panel-container <% if $Content || $Form %>has-contentpanel<% end_if %>">
 
+			<% if $ShowNavigationPanel && $NavigationPosition =='With Panels' %>
+				<% include PanelNav %>
+			<% end_if %>
 
 			<% loop CurrentPanels %>
 			<article class="panel $Width">
