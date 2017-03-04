@@ -203,7 +203,6 @@
 
 	.content {
 		@include clearfix;
-		@include user-select(none);
 		padding: 0px 50px 0px;
 
 		@include respond(all-phones) {
