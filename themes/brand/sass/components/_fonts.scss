@@ -14,3 +14,29 @@
 	   url('#{$file-path}/fonts/icons/#{$icons}.woff') format('woff'),
 	   url('#{$file-path}/fonts/icons/#{$icons}.ttf')  format('truetype');
 }
+
+@font-face {
+	font-family: 'norsebold';
+	src: url('#{$file-path}/fonts/norse/norsebold.eot');
+	src: url('#{$file-path}/fonts/norse/norsebold.eot?#iefix') format('embedded-opentype'),
+		 url('#{$file-path}/fonts/norse/norsebold.woff2') format('woff2'),
+		 url('#{$file-path}/fonts/norse/norsebold.woff') format('woff'),
+		 url('#{$file-path}/fonts/norse/norsebold.ttf') format('truetype'),
+		 url('#{$file-path}/fonts/norse/norsebold.svg#norsebold') format('svg');
+	font-weight: normal;
+	font-style: normal;
+
+}
+
+@font-face {
+	font-family: 'norse';
+	src: url('#{$file-path}/fonts/norse/norse.eot');
+	src: url('#{$file-path}/fonts/norse/norse.eot?#iefix') format('embedded-opentype'),
+		 url('#{$file-path}/fonts/norse/norse.woff2') format('woff2'),
+		 url('#{$file-path}/fonts/norse/norse.woff') format('woff'),
+		 url('#{$file-path}/fonts/norse/norse.ttf') format('truetype'),
+		 url('#{$file-path}/fonts/norse/norse.svg#norseregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+
+}
