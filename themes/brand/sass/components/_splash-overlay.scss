@@ -12,6 +12,10 @@
 		@include respond(tablets) {
 			min-height: 675px;
 		}
+
+		@include respond(print) {
+			min-height: 200px;
+		}
 	}
 	.page-header {
 		@include respond(all-phones) {
@@ -19,6 +23,11 @@
 		}
 		@include respond(tablets) {
 			padding-bottom: 28px;
+		}
+
+		@include respond(print) {
+			border: 0;
+			box-shadow: none;
 		}
 	}
 
@@ -51,6 +60,9 @@
 	width: 100%;
 	z-index: -1;
 	top: 0;
+	@include respond(print) {
+		display: none;
+	}
 }
 
 .splash {
