@@ -69,7 +69,7 @@
 		@include respond(print) {
 			display: none;
 		}
-		
+
 		a.section,
 		.navinner-section > a,
 		.active > a {
@@ -124,26 +124,6 @@
 					}
 				}
 			}
-		}
-	}
-
-
-	@include respond(portrait-tablets) {
-		@include transition-property(all);
-		@include transition-duration(0.3s);
-
-		&.four,
-		&.three {
-			min-width: 50%;
-		}
-		&.eight {
-			min-width: 100%;
-		}
-		&.six {
-			min-width: 100%;
-		}
-		&.twelve {
-			min-width: 100%;
 		}
 	}
 
