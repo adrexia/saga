@@ -133,6 +133,17 @@ $menu-width: 241px;
 			}
 		}
 	}
+
+	.has-children > a {
+		&:before {
+			content: "+";
+			display: block;
+			float: left;
+			width: 20px;
+			margin-left: -20px;
+		}
+	}
+
 }
 
 
