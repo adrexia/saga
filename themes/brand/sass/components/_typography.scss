@@ -166,6 +166,14 @@ a {
   }
 }
 
+// anchor link fix
+a[name] {
+	display: block;
+	height: 115px;
+	margin-top: -55px; //negative sticky header
+	visibility: hidden;
+}
+
 /*=====================================================
 
   Lists
