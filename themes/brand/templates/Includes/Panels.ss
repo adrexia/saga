@@ -12,7 +12,7 @@
 				<% if $Type =='News' && $NewsPage.NewsItems() %>
 
 					<div class="panel-block type-{$Type.LowerCase()} $Colour.LowerCase() $FirstLast listing">
-						<h3>
+						<h3 class="panel-heading">
 							<a href="$NewsPage.Link">$Title</a>
 						</h3>
 						<% include NewsPanel Items=$NewsPage.RecentNews %>
@@ -24,7 +24,7 @@
 						<% if $Image %>
 							<div class="img-wrap">$Image.SetWidth(430)</div>
 						<% end_if %>
-						<h3>
+						<h3 class="panel-heading">
 							<% if $Title %>$Title<% end_if %>
 							<% if $SubTitle %><span class="subhead meta-data">$SubTitle</span><% end_if %>
 						</h3>
@@ -41,7 +41,7 @@
 						<% if $Image %>
 							<div class="img-wrap">$Image.SetWidth(430)</div>
 						<% end_if %>
-						<h3>
+						<h3 class="panel-heading">
 							<% if $Title %>$Title<% end_if %>
 						</h3>
 						<% if $Content %>

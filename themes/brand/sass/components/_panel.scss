@@ -311,7 +311,7 @@
 		}
 	}
 
-	h3 {
+	h3.panel-heading {
 		padding: 50px 50px 0;
 		@include respond(all-phones) {
 			padding: 30px 20px 0;
@@ -324,7 +324,7 @@
 		}
 	}
 
-	h4 {
+	h4.panel-heading {
 		border-bottom: 0;
 		padding: 0px 50px;
 
