@@ -27,6 +27,10 @@
 
 body #BetterNavigator {
 	top: $navcontain-height;
+	
+	@include respond(print) {
+		display:none;
+	}
 }
 
 .navbar .logo {
@@ -101,6 +105,10 @@ body #BetterNavigator {
 	&.login {
 		padding-top: 6px;
 
+		@include respond(print) {
+			display: none;
+		}
+
 		a, span {
 			font-size: 12px;
 		}
@@ -130,6 +138,10 @@ body #BetterNavigator {
 
 		&.toggle {
 			line-height: 1em;
+
+			@include respond(print) {
+				display:none;
+			}
 
 			.icon {
 				vertical-align: top;
