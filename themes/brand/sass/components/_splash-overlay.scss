@@ -14,7 +14,7 @@
 		}
 
 		@include respond(print) {
-			min-height: 200px;
+			min-height: none;
 		}
 	}
 	.page-header {
@@ -28,6 +28,11 @@
 		@include respond(print) {
 			border: 0;
 			box-shadow: none;
+			padding: 0;
+
+			h1 {
+				padding: 0;
+			}
 		}
 	}
 
