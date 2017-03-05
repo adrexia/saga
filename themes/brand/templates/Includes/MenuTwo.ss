@@ -1,5 +1,5 @@
 <% loop Children %>
-	<li class="nav-$LinkingMode<% if $LinkingMode = current %> active<% end_if %><% if $First %> first<% end_if %><% if $Last %> last<% end_if %> <% if $Children %>has-children<% end_if %>">
+	<li class="navinner-$LinkingMode<% if $LinkingMode = current %> active<% end_if %><% if $First %> first<% end_if %><% if $Last %> last<% end_if %> <% if $Children %>has-children<% end_if %>">
 		<a href="$Link" class="<% if $LinkingMode = current %>active<% end_if %>">
 		$MenuTitle
 		</a>
