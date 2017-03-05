@@ -69,11 +69,13 @@
 		@include respond(print) {
 			display: none;
 		}
-
+		
+		a.section,
 		.navinner-section > a,
 		.active > a {
 			font-weight: 800;
 		}
+
 
 		.nav-level1.active,
 		.nav-section {
