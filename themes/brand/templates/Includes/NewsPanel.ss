@@ -2,7 +2,7 @@
 	<div class="listing-item $FirstLast">
 		<div class="text-block">
 			<a href="<% if $Link %>$Link<% else %>$InternalLink<% end_if %>">
-				<h4>
+				<h4 class="panel-heading">
 					<span class="subhead pb0 meta-data">
 						<time datetime="$Created">$Created.Format(d M Y)</time>
 					</span>

@@ -13,11 +13,19 @@
 		position: fixed;
 		z-index: 9;
 		box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
+
+		@include respond(print) {
+			box-shadow: none;
+			position: static;
+		}
 	}
 
 	&.has-image {
 		box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
 		z-index: 9;
+		@include respond(print) {
+			box-shadow: none;
+		}
 	}
 
 	&.pinned {
@@ -27,7 +35,7 @@
 
 body #BetterNavigator {
 	top: $navcontain-height;
-	
+
 	@include respond(print) {
 		display:none;
 	}
