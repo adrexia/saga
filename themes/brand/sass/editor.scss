@@ -53,6 +53,14 @@ h2:first-child, p:first-child {
 	margin-top: 0;
 }
 
+//reverse fix on anchors for cms
+a[name] {
+	display: inline;
+	height: auto;
+	margin-top: 0;
+	visibility: visible;
+}
+
 
 .mcePageBreak {
 	position:relative;
