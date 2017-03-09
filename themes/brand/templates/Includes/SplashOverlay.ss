@@ -1,7 +1,7 @@
 <div class="splash-overlay cropped <% if $SplashImage %> has-image<% end_if %>">
 
 	<div class="splash"></div>
-	<div class="overlay"></div>
+	<div class="overlay <% if $HideOverlay %>overlay--off<% end_if %>"></div>
 
 	<header class="page-header">
 		<div class="row">

@@ -83,4 +83,10 @@
 		opacity: 0.5;
 		text-decoration: 1px 1px rgba(#333, 0.5);
 	}
+
+	&--off {
+		.has-image & {
+			opacity: 0;
+		}
+	}
 }

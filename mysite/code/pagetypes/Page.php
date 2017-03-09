@@ -9,6 +9,7 @@ class Page extends SiteTree {
 		'ShowNavigationPanel' => 'Boolean',
 		'NavigationPosition' => 'Enum("With Panels, With Content", "With Content")',
 		'NavigationWidth' => 'Varchar(255)',
+		'HideOverlay' => 'Boolean'
 	);
 
 	private static $has_many = array(
@@ -50,6 +51,16 @@ class Page extends SiteTree {
 			$width->setDescription("Width of navigation panel at desktop size");
 
 		}
+
+		return $fields;
+	}
+
+	public function getSettingsFields() {
+		$fields = parent::getSettingsFields();
+
+		$fields->addFieldToTab('Root.Settings', $overlay = CheckboxField::create('HideOverlay', 'Turn of the image overlay'));
+
+		$overlay->setDescription('Note: the overlay helps with the accessiblity of header text');
 
 		return $fields;
 	}
