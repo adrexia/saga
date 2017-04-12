@@ -168,7 +168,7 @@ a {
 
 // anchor link fix
 a[name] {
-	display: block;
+	display: inline-block;
 	height: 55px;
 	margin-top: -55px; //negative sticky header
 	visibility: hidden;
